@@ -8,16 +8,33 @@ class Phrase {
     }
 
     addPhraseToDisplay() {
-        // document.getElementById("phrase").innerHTML = "abcdefgjkajkljlkjs"
+
+        let phraseArray = this.phrase.split("");
+        let phraseBody = document.getElementById("phrase")
+        let arrayNew = phraseArray.map(letter => {
+            if (letter !== " ") {
+                return `<li class="hide letter ${letter}">${letter}</li>`
+            }
+            else {
+                return `<li class="space"> </li>`
+            }
+        })
+        phraseBody.innerHTML = '<ul>' + arrayNew.join("") + '</ul>';
     }
 
-    checkLetter() {
-
+    checkLetter(letter) {
+        //checks to see if the letter selected by the player matches a letter in the phrase
+        return this.phrase.includes(letter)
     }
 
-    showMatchedLetter() {
-
+    showMatchedLetter(letter) {
+        let matchingLetterNodes = document.querySelectorAll(`li.hide.letter.${letter}`)
+        console.log(matchingLetterNodes);
+        for (let node of matchingLetterNodes) {
+            node.className = node.className.replace("hide", "show");
+        }
     }
 
 
 }
+

@@ -2,6 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
+
 class Game {
     constructor() {
         this.missed = 0;
@@ -22,7 +23,8 @@ class Game {
         /* get a random phrase for the game */
         let randomPhrase = this.getRandomPhrase();
         this.activePhrase = randomPhrase;
-        this.activePhrase.addPhraseToDisplay()
+        this.activePhrase.addPhraseToDisplay();
+
     }
 
     getRandomPhrase() {
@@ -30,12 +32,23 @@ class Game {
         return this.phrases[randomIndex];
     }
 
-    handleInteraction() {
+    handleInteraction(letterDom) {
 
+        letterDom.disabled = true;
+        let phrase = this.activePhrase;
+
+        if (phrase.checkLetter(letterDom.innerText)) {
+            letterDom.className += " chosen";
+            phrase.showMatchedLetter(letterDom.innerText)
+        }
+        else {
+            letterDom.className += " wrong";
+            this.removeLife()
+        }
     }
 
     removeLife() {
-
+        console.log("test")
     }
 
     checkForWin() {
