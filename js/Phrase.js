@@ -29,7 +29,6 @@ class Phrase {
 
     showMatchedLetter(letter) {
         let matchingLetterNodes = document.querySelectorAll(`li.hide.letter.${letter}`)
-        console.log(matchingLetterNodes);
         for (let node of matchingLetterNodes) {
             node.className = node.className.replace("hide", "show");
         }
