@@ -95,7 +95,9 @@ class Game {
             document.getElementById("game-over-message").innerHTML = "You won!";
             overlay.className = overlay.className.replace("start", "win")
         }
+
         /* After a game is completed, the gameboard needs to be reset */
+
         /* Remove all li elements from the Phrase ul */
         document.querySelector("#phrase ul").innerHTML = '';
 

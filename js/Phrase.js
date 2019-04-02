@@ -8,7 +8,7 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
     }
 
-    /* display letters */
+    /* display phrase in the gameboard */
     addPhraseToDisplay() {
 
         /* add letter placeholders to the display when the game starts */

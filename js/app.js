@@ -1,13 +1,14 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * app.js */
-
-/* Create a new instance of the Game class */
-let game = new Game();
+let game = null;
 
 /* add event listener for the start button */
 let startButton = document.getElementById("btn__reset");
-startButton.addEventListener("click", () => { game.startGame() });
+startButton.addEventListener("click", () => {
+    game = new Game()
+    game.startGame()
+});
 
 /* add event listener for onscreen keyboard buttons */
 let keyboardButtonParent = document.getElementById("qwerty");
